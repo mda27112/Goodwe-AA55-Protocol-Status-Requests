@@ -9,10 +9,8 @@ Goodwe inverters communicate via UDP, by default running on port 8899. The ES/EM
 0x6 | Device Running Data Request
 0x9 | Device Status Data Request
 
-| 0x2 | t  |
-|---|---|---|---|---|
-| 0x6 | Device Running Data Request  |
-| 0x9 |    |
+ Markup : 1. A numbered list
+          2. Which is numbered
 
 Message buffer structure.
 
