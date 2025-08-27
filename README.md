@@ -16,6 +16,11 @@ Goodwe inverters communicate via UDP, by default running on port 8899. The ES/EM
 
 Message buffer structure.
 
+Byte | Value
+------------- | -------------
+0 | 0xAA
+1 | 0x55
+
 Byte	Value
 
 0	0xAA
