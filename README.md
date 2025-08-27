@@ -11,6 +11,18 @@ Goodwe inverters communicate via UDP, by default running on port 8899. The ES/EM
 0x9 - Device Status Data Request
   
 Message buffer structure.
+Byte	Value
+0	0xAA
+1	0x55
+2	Source Address - default is 0xC0
+3	Destination Address - default is 0x7F
+4	Control Code
+5	Function Code
+6	Length
+7-n	Data 0,1 ..N
+n+1	Checksum
+n+2	Checksum
+
 
 
 **What is GitHub?**: GitHub is a collaboration platform that uses _[Git](https://docs.github.com/get-started/quickstart/github-glossary#git)_ for versioning. GitHub is a popular place to share and contribute to [open-source](https://docs.github.com/get-started/quickstart/github-glossary#open-source) software.
