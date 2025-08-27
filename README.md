@@ -1,29 +1,13 @@
 <header>
-
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
-
 # Goodwe AA55 Status Request Using Node Red
-
-_Get started using GitHub in less than an hour._
-
 </header>
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+Goodwe inverters communicate via UDP, by default running on port 8899. The ES/EM/BP inverter family use a native 'AA55' protocol (and ModBus protocol). This Node Red flow packages and sends three types of pre-canned AA55 status request to the inverter.
+  0x2 - Device Version Request
+  0x6 - Device Running Data Request
+  0x9 - Device Status Data Request
+Message buffer structure.
 
-## Step 1: Create a branch
-
-_Welcome to "Introduction to GitHub"! :wave:_
 
 **What is GitHub?**: GitHub is a collaboration platform that uses _[Git](https://docs.github.com/get-started/quickstart/github-glossary#git)_ for versioning. GitHub is a popular place to share and contribute to [open-source](https://docs.github.com/get-started/quickstart/github-glossary#open-source) software.
 <br>:tv: [Video: What is GitHub?](https://www.youtube.com/watch?v=pBy1zgt0XPc)
