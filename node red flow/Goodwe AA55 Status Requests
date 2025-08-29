@@ -1,0 +1,157 @@
+[
+    {
+        "id": "8704d7605a0df225",
+        "type": "udp out",
+        "z": "b880fa68f00a4e19",
+        "name": "Goodwe TCP Send",
+        "addr": "192.168.20.149",
+        "iface": "",
+        "port": "8899",
+        "ipv": "udp4",
+        "outport": "8899",
+        "base64": false,
+        "multicast": "false",
+        "x": 850,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "c8ea6f0eda7d6d7e",
+        "type": "function",
+        "z": "b880fa68f00a4e19",
+        "name": "Device Running Data Request AA55",
+        "func": "//AA55 protocol command - Device Runnning Data request ES/EM/BP family\n//msg.payload = Buffer.from(\"aa 55 c0 7f 01 06 00 02 45\", \"hex\");\nmsg.payload = Buffer.from([0xAA, 0x55, 0xC0, 0x7F, 0x1, 0x6, 0x00, 0x02, 0x45]);\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1220,
+        "wires": [
+            [
+                "8704d7605a0df225"
+            ]
+        ]
+    },
+    {
+        "id": "9cc8d52f64791d0d",
+        "type": "inject",
+        "z": "b880fa68f00a4e19",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 1220,
+        "wires": [
+            [
+                "c8ea6f0eda7d6d7e"
+            ]
+        ]
+    },
+    {
+        "id": "a55308e8294af829",
+        "type": "inject",
+        "z": "b880fa68f00a4e19",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 1260,
+        "wires": [
+            [
+                "ed5a204685eeb34e"
+            ]
+        ]
+    },
+    {
+        "id": "ed5a204685eeb34e",
+        "type": "function",
+        "z": "b880fa68f00a4e19",
+        "name": "Device Settings Data Request AA55",
+        "func": "//AA55 protocol command - Device Settings Request ES/EM/BP family\nmsg.payload = Buffer.from([0xAA, 0x55, 0xC0, 0x7F, 0x1, 0x9, 0x00, 0x02, 0x48]);\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1260,
+        "wires": [
+            [
+                "8704d7605a0df225"
+            ]
+        ]
+    },
+    {
+        "id": "33493eed5042bb66",
+        "type": "function",
+        "z": "b880fa68f00a4e19",
+        "name": "Device Version Info Request AA55",
+        "func": "//AA55 protocol command - Device Settings Request ES/EM/BP family\nmsg.payload = Buffer.from([0xAA, 0x55, 0xC0, 0x7F, 0x1, 0x2, 0x00, 0x02, 0x41]);\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1180,
+        "wires": [
+            [
+                "8704d7605a0df225"
+            ]
+        ]
+    },
+    {
+        "id": "c0f8ee45fd19510e",
+        "type": "inject",
+        "z": "b880fa68f00a4e19",
+        "name": "Trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 1180,
+        "wires": [
+            [
+                "33493eed5042bb66"
+            ]
+        ]
+    }
+]
