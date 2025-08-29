@@ -2,7 +2,8 @@
 </h1>
         
 Goodwe inverters communicate via UDP, by default running on port 8899. The ES/EM/BP inverter family use a native 'AA55' protocol (and ModBus protocol). This Node Red flow packages and sends three types of pre-canned AA55 status request to the inverter.  
-  
+
+#### Function Code  
 0x2 - Device Version Request  
 0x6 - Device Running Data Request  
 0x9 - Device Status Data Request  
@@ -15,7 +16,7 @@ Byte | Value
 1 | 0x55
 2 | Source Address - default is 0xC0
 3 | Destination Address - default is 0x7F
-4 | Control Code
+4 | Control Code - 0x1
 5 | Function Code
 6 | Length
 7-n | Data 0,1 ..N
